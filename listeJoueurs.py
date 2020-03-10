@@ -18,7 +18,14 @@ def ListeJoueurs(nomsJoueurs):
     paramètre: nomsJoueurs une liste de chaines de caractères
     résultat: la liste des joueurs avec un joueur courant mis à 0
     """
-    pass
+    listedejoueurs=[]
+    for i in nomsJoueurs:
+      joueur=Joueur(i)
+      listedejoueurs.append(joueur["nomjoueur"])
+    
+    return listedejoueurs
+
+
 
 def ajouterJoueur(joueurs, joueur):
     """
@@ -27,7 +34,10 @@ def ajouterJoueur(joueurs, joueur):
                 joueur le joueur à ajouter
     cette fonction ne retourne rien mais modifie la liste des joueurs
     """
-    pass
+    nouveaujoueur=Joueur(joueur)
+    joueurs.append(nouveaujoueur["nomjoueur"])
+    
+
 
 def initAleatoireJoueurCourant(joueurs):
     """
@@ -142,3 +152,14 @@ def joueurCourantAFini(joueurs):
     résultat: un booleen indiquant si le joueur courant a fini
     """
     pass
+
+if __name__=="__main__" :
+
+  liste=ListeJoueurs(("Michel","Roger"))
+  joueurcourant=liste[0]
+  print(liste)
+  print(joueurcourant)
+
+  ajouterJoueur(liste, "oui")
+  print(liste)
+  
