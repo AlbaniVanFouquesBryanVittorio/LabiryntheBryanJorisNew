@@ -10,7 +10,7 @@
 """
 
 def Joueur(nom):
-    joueur={"nomjoueur" : nom , "listetresor" : []}
+    joueur={"nomjoueur" : nom , "listetresors" : []}
 
     return joueur
     """
@@ -21,8 +21,8 @@ def Joueur(nom):
 
 
 def ajouterTresor(joueur,tresor):
-    if tresor not in joueur["listetresor"]:
-      joueur["listetresor"].append(tresor)
+    if tresor not in joueur["listetresors"]:
+      joueur["listetresors"].append(tresor)
 
     """
     ajoute un trésor à trouver à un joueur (ce trésor sera ajouter en fin de liste) Si le trésor est déjà dans la liste des trésors à trouver la fonction ne fait rien
@@ -35,7 +35,7 @@ def ajouterTresor(joueur,tresor):
 
 def prochainTresor(joueur):
     try:
-      return joueur["listetresor"][0]
+      return joueur["listetresors"][0]
     except:
       return None
 
@@ -48,7 +48,7 @@ def prochainTresor(joueur):
 
 
 def tresorTrouve(joueur):
-    del joueur["listetresor"][0]
+    del joueur["listetresors"][0]
     """ 
     enlève le premier trésor à trouver car le joueur l'a trouvé
     paramètre:
@@ -58,7 +58,7 @@ def tresorTrouve(joueur):
 
 
 def getNbTresorsRestants(joueur):
-    return len(joueur["listetresor"])
+    return len(joueur["listetresors"])
     """
     retourne le nombre de trésors qu'il reste à trouver
     paramètre: joueur le joueur
@@ -83,7 +83,7 @@ if __name__=="__main__" :
   ajouterTresor(Michel,"4")
   ajouterTresor(Michel,"5")
   ajouterTresor(Michel,"6")
-  print(Michel["listetresor"])
+  print(Michel["listetresors"])
 
   print(prochainTresor(Michel))
 
