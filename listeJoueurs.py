@@ -48,8 +48,6 @@ def initAleatoireJoueurCourant(joueurs):
     """
     x=random.randint(0,len(joueurs[0])-1)
     joueurs[1]=x
-    #joueurs[1]=joueurs[0][x]
-
 
 def distribuerTresors(joueurs,nbTresors=24, nbTresorMax=0):
     """
@@ -137,7 +135,7 @@ def nomJoueurCourant(joueurs):
     paramètre: joueurs la liste des joueurs
     résultat: le nom du joueur courant
     """
-    getNom(joueurs[0][joueurs[1]])
+    return getNom(joueurs[0][joueurs[1]])
 
 def nomJoueur(joueurs,numJoueur):
     """
@@ -146,7 +144,7 @@ def nomJoueur(joueurs,numJoueur):
                 numJoueur le numéro du joueur    
     résultat: le nom du joueur numJoueur
     """
-    getNom(joueurs[0][numJoueur])
+    return getNom(joueurs[0][numJoueur])
 
 def prochainTresorJoueur(joueurs,numJoueur):
     """
@@ -155,7 +153,7 @@ def prochainTresorJoueur(joueurs,numJoueur):
                 numJoueur le numéro du joueur    
     résultat: le prochain trésor du joueur numJoueur (un entier)
     """
-    prochainTresor(joueurs[0][numJoueur])
+    return prochainTresor(joueurs[0][numJoueur])
 
 def tresorCourant(joueurs):
     """
@@ -163,7 +161,7 @@ def tresorCourant(joueurs):
     paramètre: joueurs la liste des joueurs 
     résultat: le prochain trésor du joueur courant (un entier)
     """
-    pass
+    return prochainTresor(joueurs[0][joueurs[1]])
 
 def joueurCourantAFini(joueurs):
     """
@@ -171,7 +169,14 @@ def joueurCourantAFini(joueurs):
     paramètre: joueurs la liste des joueurs 
     résultat: un booleen indiquant si le joueur courant a fini
     """
-    pass
+    joueurCourantAFini=False
+
+    if getNbTresorsRestants(joueurs[0][joueurs[1]])==0:
+      joueurCourantAFini=True
+    
+    return joueurCourantAFini
+
+
 
 if __name__=="__main__" :
 
@@ -206,5 +211,22 @@ if __name__=="__main__" :
   print(nbTresorsRestantsJoueur(liste,0))
   print("")
 
+  print(numJoueurCourant(liste))
+  print("")
 
+  print(nomJoueurCourant(liste))
+  print("")
+
+  print(nomJoueur(liste,1))
+  print("")
   
+  print(prochainTresorJoueur(liste,1))
+  print("")
+
+  print(tresorCourant(liste))
+  print("")
+
+  print(prochainTresorJoueur(liste,1))
+  print("")
+
+  print(joueurCourantAFini(liste))
