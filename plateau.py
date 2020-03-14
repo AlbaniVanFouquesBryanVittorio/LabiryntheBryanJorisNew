@@ -22,7 +22,8 @@ def Plateau(nbJoueurs, nbTresors):
                 ont été placée de manière aléatoire
               - la carte amovible qui n'a pas été placée sur le plateau
     """
-    pass
+    nouveauPlateau=Matrice(7,7,carte( nord, est, sud, ouest, tresor=0, pions=[]))
+
 
 
 

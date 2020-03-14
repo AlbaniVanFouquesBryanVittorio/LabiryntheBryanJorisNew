@@ -174,7 +174,6 @@ def joueurCourantAFini(joueurs):
     if getNbTresorsRestants(joueurs[0][joueurs[1]])==0:
       joueurCourantAFini=True
     
-    return joueurCourantAFini
 
 
 
